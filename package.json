@@ -3,9 +3,9 @@
   "main": "functions/server.js",
   "scripts": {
     "dev": "next",
-    "build2": "next build",
+    "build": "next build",
     "postbuild": "next-on-netlify",
-    "build": "netlify-lambda build express",
+    "build2": "netlify-lambda build express",
     "start": "nodemon server-local.js"
   },
   "dependencies": {

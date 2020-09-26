@@ -3,7 +3,7 @@
   "main": "functions/server.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "node databasetest.js && next build",
     "postbuild": "next-on-netlify",
     "build2": "netlify-lambda build express",
     "start": "nodemon server-local.js"
@@ -17,7 +17,9 @@
     "nodemon": "^1.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "serverless-http": "^2.6.0"
+    "serverless-http": "^2.6.0",
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "buffer-loader": "^0.1.0"

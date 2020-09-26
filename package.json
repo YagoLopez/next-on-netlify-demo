@@ -2,14 +2,21 @@
   "name": "next-on-netlify-demo",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "postbuild": "next-on-netlify"
+    "build2": "next build",
+    "postbuild": "next-on-netlify",
+    "build": "netlify-lambda build express",
+    "start": "nodemon server-local.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "next": "^9.5.3",
     "next-on-netlify": "^2.4.0",
+    "netlify-lambda": "^1.6.3",
+    "nodemon": "^1.19.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "serverless-http": "^2.6.0"
   },
   "devDependencies": {
     "buffer-loader": "^0.1.0"

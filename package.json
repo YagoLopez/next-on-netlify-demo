@@ -1,5 +1,6 @@
 {
   "name": "next-on-netlify-demo",
+  "main": "functions/server.js",
   "scripts": {
     "dev": "next",
     "build2": "next build",

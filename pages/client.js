@@ -79,7 +79,7 @@ const Index = () => {
         }
         <p><button onClick={() => onAddItem('Item')}>Add Item</button></p>
         <p>
-          <Link href="/api/graphql">
+          <Link href="/.netlify/functions/graphql">
             <a>/api/graphql ➡</a>
           </Link>
         </p>

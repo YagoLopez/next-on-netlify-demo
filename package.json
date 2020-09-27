@@ -4,11 +4,11 @@
   "scripts": {
     "dev": "next",
     "database:test": "node databasetest.js",
-    "build:temp": "run-s build:next build:next:netlify build:lambda",
+    "build": "run-s build:next build:next:netlify build:lambda",
     "build:next": "next build",
     "build:next:netlify": "npx next-on-netlify",
     "build:express": "netlify-lambda build express",
-    "build": "netlify-lambda build src/lambda",
+    "build:lambda": "netlify-lambda build src/lambda",
     "start": "nodemon server-local.js",
     "start:lambda": "netlify-lambda serve src/lambda"
   },

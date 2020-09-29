@@ -1,0 +1,36 @@
+import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import UserContext from "../lib/userContext.js.copia";
+
+class MyDocument extends Document {
+
+  client = new ApolloClient({
+    uri: 'http://localhost:9000/.netlify/functions/graphql',
+    cache: new InMemoryCache()
+  });
+
+
+  // static async getInitialProps(ctx) {
+  //   const initialProps = await Document.getInitialProps(ctx)
+  //   return { ...initialProps }
+  // }
+
+  render() {
+    return (
+      <UserContext.Provider value={this.client}>
+        <Html>
+          <Head />
+          <body>
+          <Main />
+          <NextScript />
+          </body>
+        </Html>
+      </UserContext.Provider>
+
+
+
+    )
+  }
+}
+
+export default MyDocument

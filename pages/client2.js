@@ -1,12 +1,8 @@
-// todo: example with knex lib and sqlite in a new branch
-// todo: add prisma and crud example
-// todo: study pooling in official docs to achieve realtime
-// todo: try with pouchdb for realtime
-
-import withApollo from '../lib/apolloClient'
+import { gql } from '@apollo/client';
 import { useQuery, useMutation } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
 import Link from "next/link";
+import withApollo from '../lib/apolloClient'
+
 
 const GET_ITEMS = gql`
   query {
@@ -32,7 +28,10 @@ const REMOVE_ITEM = gql`
   }
 `
 
-const Index = () => {
+const Client2 = (props) => {
+
+  // debugger
+  console.log('CLIENT 2 PROPS', props);
 
   const onCompleted = (result) => {
     console.log('mutation completed', result)
@@ -87,5 +86,5 @@ const Index = () => {
     );
   }
 }
-
-export default withApollo({ ssr: true })(Index);
+// export default Client2
+export default withApollo({ ssr: true })(Client2);

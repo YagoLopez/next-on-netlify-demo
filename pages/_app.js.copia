@@ -1,0 +1,50 @@
+import "../styles.css";
+// import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+
+const test = async () => {
+  const res = await fetch('http://localhost:3000/api/hostname2')
+  const host = await res.json()
+  return {host}
+}
+const host = await test()
+console.log('host', host);
+
+
+export default function MyApp({ Component, pageProps }) {
+
+
+  // const client = new ApolloClient({
+  //   uri: 'http://localhost:9000/.netlify/functions/graphql',
+  //   cache: new InMemoryCache()
+  // });
+
+  return (
+    // <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    // </ApolloProvider>
+  );
+}
+
+
+
+// MyApp.getInitialProps = async (appContext) => {
+//   const host = appContext.ctx.req.headers.host
+//   console.log("APP GET INITIAL PROPS", appContext.ctx.req.headers.host)
+//   // const appProps = await App.getInitialProps(appContext);
+//   // console.log('app props', appProps);
+//   return {
+//     props: {host}
+//   }
+// };
+
+// Only uncomment this method if you have blocking data requirements for
+// every single page in your application. This disables the ability to
+// perform automatic static optimization, causing every page in your app to
+// be server-side rendered.
+//
+// MyApp.getInitialProps = async (appContext) => {
+//   // calls page's `getInitialProps` and fills `appProps.pageProps`
+//   const appProps = await App.getInitialProps(appContext);
+//
+//   return { ...appProps }
+// }

@@ -52,6 +52,17 @@ const server = new ApolloServer({
   resolvers,
   playground: true,
   introspection: true,
+  context: ({ event, context }) => ({
+    headers: event.headers,
+    functionName: context.functionName,
+    event,
+    context,
+  }),
 });
 
-exports.handler = server.createHandler();
+exports.handler = server.createHandler({
+  cors: {
+    origin: '*',
+    credentials: false
+  }
+});
